@@ -24,7 +24,7 @@ public void setMines()
 
 public void draw ()
 {
-    background( 0 );
+    background( 30,30,30 );
     if(isWon() == true)
         displayWinningMessage();
 }
