@@ -2,8 +2,8 @@ import de.bezier.guido.*;
 //Declare and initialize constants NUM_ROWS and NUM_COLS = 20
 public final static int NUM_ROWS = 20;
 public final static int NUM_COLS = 20;
-private MSButton[][] buttons; //2d array of minesweeper buttons
-private ArrayList <MSButton> mines = new ArrayList <MSButton>(); //ArrayList of just the minesweeper buttons that are mined
+private MSButton[][] Buttons; //2d array of minesweeper Buttons
+private ArrayList <MSButton> mines = new ArrayList <MSButton>(); //ArrayList of just the minesweeper Buttons that are mined
 
 void setup ()
 {
@@ -13,11 +13,11 @@ void setup ()
     // make the manager
     Interactive.make( this );
     
-    //your code to initialize buttons goes here
-    buttons = new MSButton[NUM_ROWS][NUM_COLS];
+    //your code to initialize Buttons goes here
+    Buttons = new MSButton[NUM_ROWS][NUM_COLS];
     for(int r = 0; r < NUM_ROWS; r++){
       for(int c = 0; c < NUM_COLS; c++){
-        buttons[r][c] = new MSButton(r,c);
+        Buttons[r][c] = new MSButton(r,c);
       }
     }
     setMines();
@@ -44,7 +44,7 @@ public boolean isWon()
 {
     for(int r = 0; r < NUM_ROWS; r++){
       for(int c = 0; c < NUM_COLS; c++){
-        if(!buttons[r][c].clicked && !mines.contains(Buttons[r][c])){
+        if(!Buttons[r][c].clicked && !mines.contains(Buttons[r][c])){
           return false;
         }
       }
