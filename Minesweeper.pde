@@ -28,8 +28,8 @@ public void setMines()
     while(mines.size() < 40){
       int r = (int)(Math.random()*20); 
       int c = (int)(Math.random()*20);
-      if(!mines.contains(buttons)){
-        mines.add(buttons[r][c]);
+      if(!mines.contains(Buttons)){
+        mines.add(Buttons[r][c]);
       }
    }
 }
@@ -44,7 +44,7 @@ public boolean isWon()
 {
     for(int r = 0; r < NUM_ROWS; r++){
       for(int c = 0; c < NUM_COLS; c++){
-        if(!buttons[r][c].clicked && !mines.contains(buttons[r][c])){
+        if(!buttons[r][c].clicked && !mines.contains(Buttons[r][c])){
           return false;
         }
       }
@@ -55,29 +55,29 @@ public void displayLosingMessage()
 {
   for(int r = 0; r < NUM_ROWS; r++){
     for(int c = 0; c < NUM_COLS; c++){
-      if(!buttons[r][c].clicked && mines.contains(buttons[r][c])){
-        buttons[r][c].clicked = true;
-        buttons[NUM_ROWS/2][(NUM_COLS/2)-4].setLabel("Y");
-        buttons[NUM_ROWS/2][(NUM_COLS/2)-3].setLabel("O");
-        buttons[NUM_ROWS/2][(NUM_COLS/2)-2].setLabel("U");
-        buttons[NUM_ROWS/2][(NUM_COLS/2)-1].setLabel(" ");
-        buttons[NUM_ROWS/2][(NUM_COLS/2)].setLabel("L");
-        buttons[NUM_ROWS/2][(NUM_COLS/2)+1].setLabel("O");
-        buttons[NUM_ROWS/2][(NUM_COLS/2)+2].setLabel("S");
-        buttons[NUM_ROWS/2][(NUM_COLS/2)+3].setLabel("T");
-        buttons[NUM_ROWS/2][(NUM_COLS/2)+4].setLabel("!");
+      if(!Buttons[r][c].clicked && mines.contains(Buttons[r][c])){
+        Buttons[r][c].clicked = true;
+        Buttons[NUM_ROWS/2][(NUM_COLS/2)-4].setLabel("Y");
+        Buttons[NUM_ROWS/2][(NUM_COLS/2)-3].setLabel("O");
+        Buttons[NUM_ROWS/2][(NUM_COLS/2)-2].setLabel("U");
+        Buttons[NUM_ROWS/2][(NUM_COLS/2)-1].setLabel(" ");
+        Buttons[NUM_ROWS/2][(NUM_COLS/2)].setLabel("L");
+        Buttons[NUM_ROWS/2][(NUM_COLS/2)+1].setLabel("O");
+        Buttons[NUM_ROWS/2][(NUM_COLS/2)+2].setLabel("S");
+        Buttons[NUM_ROWS/2][(NUM_COLS/2)+3].setLabel("T");
+        Buttons[NUM_ROWS/2][(NUM_COLS/2)+4].setLabel("!");
       }
     }
   }
 }
 public void displayWinningMessage()
 {
-    buttons[NUM_ROWS/2][(NUM_COLS/2)-4].setLabel("Y");
-    buttons[NUM_ROWS/2][(NUM_COLS/2)-3].setLabel("O");
-    buttons[NUM_ROWS/2][(NUM_COLS/2)-2].setLabel("U");
-    buttons[NUM_ROWS/2][(NUM_COLS/2)-1].setLabel(" ");
-    buttons[NUM_ROWS/2][(NUM_COLS/2)].setLabel("W");
-    buttons[NUM_ROWS/2][(NUM_COLS/2)+1].setLabel("O");
+    Buttons[NUM_ROWS/2][(NUM_COLS/2)-4].setLabel("Y");
+    Buttons[NUM_ROWS/2][(NUM_COLS/2)-3].setLabel("O");
+    Buttons[NUM_ROWS/2][(NUM_COLS/2)-2].setLabel("U");
+    Buttons[NUM_ROWS/2][(NUM_COLS/2)-1].setLabel(" ");
+    Buttons[NUM_ROWS/2][(NUM_COLS/2)].setLabel("W");
+    Buttons[NUM_ROWS/2][(NUM_COLS/2)+1].setLabel("O");
     buttons[NUM_ROWS/2][(NUM_COLS/2)+2].setLabel("N");
     buttons[NUM_ROWS/2][(NUM_COLS/2)+3].setLabel("!");
 }
